@@ -72,11 +72,6 @@ async function fetchMeaning()
                             {
                                 document.querySelector('#example ul').innerHTML+=`<li>${definitions.example}</li>`;
                             }
-
-                            if(document.querySelector('#example ul').innerHTML == '')
-                            {
-                                document.querySelector('#example ul').innerHTML+=`Nothing Here..`;
-                            }
                             
                         });
 
@@ -110,6 +105,11 @@ async function fetchMeaning()
 
                 });
             });
+
+            if(document.querySelector('#example ul').innerHTML == '')
+            {
+                document.querySelector('#example ul').innerHTML+=`Nothing Here..`;
+            }
             
             // For Pronounce Panel
             var flag=false;
