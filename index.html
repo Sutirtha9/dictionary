@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dictionary</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 id="heading">Online Dictionary</h1>
+        <form class="main">
+
+            <div class="searchPanel">
+                <input type="text" id="search" name="word" placeholder="Search Here" autocomplete="off">
+                <button id="searchBtn"><ion-icon name="search-outline"></ion-icon></button>
+            </div>
+
+            <p id="error">a</p>
+            <h2 id="wait">Please Wait For A Moment...</h2>
+
+            <div class="pronouncePanel">
+                <h1><i></i></h1>
+                <ion-icon name="volume-medium-outline" onpointerenter="document.querySelector('.pronouncePanel ion-icon').name='volume-medium' " onpointerleave="document.querySelector('.pronouncePanel ion-icon').name='volume-medium-outline' "></ion-icon>
+            </div>
+
+            <div class="cards"></div>
+
+        </form>
+
+        <p id="creator">By Sutirtha</p>
+    </body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="script.js"></script>
+</html>

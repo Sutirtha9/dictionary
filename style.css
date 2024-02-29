@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    background-color: #003468;
+}
+body::-webkit-scrollbar
+{
+    display: none;
+}
+h1#heading
+{
+    position: absolute;
+    top: 30px;
+    color: #fffd74;
+    font-family: "Anta", sans-serif;
+    font-size: 50px;
+}
+form.main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
+}
+.searchPanel
+{
+    display: flex;
+    align-items: center;
+    margin-top: 300px;
+    transition: all 0.5s;
+}
+#search
+{
+    position: relative;
+    width: 490px;
+    height: 40px;
+    border: 3px solid #ffffff00;
+    padding: 0 7px;
+    text-align: center;
+    border-radius: 50px;
+    transition: all 0.2s;
+}
+#search:focus
+{
+    outline: none;
+    border: 3px solid #00aeff;
+}
+#searchBtn
+{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 40px;
+    margin-left: 10px;
+    border: none;
+    font-size: 25px;
+    transition: all 0.15s;
+}
+#searchBtn:hover
+{
+    cursor: pointer;
+    color: #fffd74;
+    background-color: #0054a8;
+}
+#searchBtn ion-icon
+{
+    padding-top: 6px;
+}
+#error
+{
+    color: #e73b3b;
+
+    visibility: hidden;
+}
+#wait
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background: #ffffffa0;
+    padding: 50px;
+    top: 400px;
+    border: none;
+    border-radius: 20px;
+
+    visibility: hidden;
+
+}
+#wait ion-icon
+{
+    color: #c93434;
+    font-size: 45px;
+    padding-right: 5px;
+}
+div.pronouncePanel
+{
+    position: relative;
+    display: flex;
+    padding: 10px 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #0054a8;
+    color: #fffd74;
+    box-shadow: 10px 10px 10px #002056fd;
+    border: none;
+    border-radius: 20px;
+    margin: 25px 0;
+
+    transition: all 0.5s;
+    visibility: hidden;
+}
+.pronouncePanel h1
+{
+    padding-right: 25px;
+}
+.pronouncePanel ion-icon
+{
+    font-size: 30px;
+}
+.pronouncePanel ion-icon:hover
+{
+    cursor: pointer;
+}
+.cards
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.card
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    max-width: 80%;
+    color: #fffd74; 
+    padding: 10px 10px;
+    background-color: #004c98;
+    margin: 0 20px;
+    margin-top: 50px;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #002056fd;
+}
+ul
+{
+    padding-left: 20px;
+}
+.card h1
+{
+    font-family: "Anta", sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+#creator
+{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-family: "Anta", sans-serif;
+}
