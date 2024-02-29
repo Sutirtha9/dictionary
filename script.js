@@ -116,7 +116,7 @@ async function fetchMeaning()
 
             data[0].phonetics.forEach(phonetics => 
             {
-                if(phonetics.audio != null && flag == false)
+                if(phonetics.audio != null && phonetics.text != null && flag == false)
                 {
                     document.querySelector('.pronouncePanel h1 i').innerHTML=phonetics.text;
                     audio = new Audio(`${phonetics.audio}`);
@@ -124,6 +124,26 @@ async function fetchMeaning()
 
                 }
             });
+
+            data[0].phonetics.forEach(phonetics => 
+            {
+                if(phonetics.text != null && flag == false)
+                {
+                    document.querySelector('.pronouncePanel h1 i').innerHTML=phonetics.text;
+                    flag=true;
+                }
+            });
+
+            data[0].phonetics.forEach(phonetics => 
+            {
+                if(phonetics.audio != null && flag == false)
+                {
+                    document.querySelector('.pronouncePanel h1 i').innerHTML=word;
+                    audio = new Audio(`${phonetics.audio}`); 
+                    flag=true;
+                }
+            });
+
             document.querySelector('.pronouncePanel ion-icon').addEventListener('click',()=>
             {
                 audio.play();
