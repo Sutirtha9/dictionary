@@ -1,3 +1,4 @@
+
 var word = document.querySelector('#search').value;
 var audio;
 
@@ -11,6 +12,8 @@ document.querySelector('form').addEventListener('submit',e =>
         document.querySelector('#wait').style.visibility='visible';
         document.querySelector('.pronouncePanel').style.visibility='hidden';
         document.querySelector('#wait').innerHTML=`Please Wait For A Moment...`;
+
+        
         fetchMeaning();
     }
     else
@@ -35,8 +38,6 @@ async function fetchMeaning()
     .then(result => result.json())
     .then(data =>
     {
-
-
         if(data.title == null)
         {
             document.querySelector('#wait').style.visibility='hidden';
@@ -112,35 +113,25 @@ async function fetchMeaning()
             }
             
             // For Pronounce Panel
-            var flag=false;
+            var flagText=false,flagAudio=false;
+
+            document.querySelector('.pronouncePanel h1 i').innerHTML=word;
 
             data[0].phonetics.forEach(phonetics => 
             {
-                if(phonetics.audio != null && phonetics.text != null && flag == false)
+                if(phonetics.text != null && flagText == false)
                 {
                     document.querySelector('.pronouncePanel h1 i').innerHTML=phonetics.text;
-                    audio = new Audio(`${phonetics.audio}`);
-                    flag=true;
-
+                    flagText=true;
                 }
             });
 
             data[0].phonetics.forEach(phonetics => 
             {
-                if(phonetics.text != null && flag == false)
+                if(phonetics.audio != null && flagAudio == false)
                 {
-                    document.querySelector('.pronouncePanel h1 i').innerHTML=phonetics.text;
-                    flag=true;
-                }
-            });
-
-            data[0].phonetics.forEach(phonetics => 
-            {
-                if(phonetics.audio != null && flag == false)
-                {
-                    document.querySelector('.pronouncePanel h1 i').innerHTML=word;
                     audio = new Audio(`${phonetics.audio}`); 
-                    flag=true;
+                    flagAudio=true;
                 }
             });
 
